@@ -1,0 +1,22 @@
+<button type="button" name="" id="" class="btn btn-secondary" [routerLink]="['/empleados']">
+    <i class="material-icons">undo</i>
+</button>
+
+<h2>Nomina de: {{ empleado.nombre }} {{ empleado.apellido }}</h2>
+<h4>Detalles de pago</h4>
+<table class="table" id="tablita">
+    <thead>
+        <tr>
+            <th scope="col">Mes</th>
+            <th scope="col">Año</th>
+            <th scope="col">Ingresos</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of nominas">
+            <td>{{x.mes}}</td>
+            <td>{{x.anio}}</td>
+            <td *ngIf="x.empleados.id == pId">{{x.empleados.sueldo}}</td>
+        </tr>
+    </tbody>
+</table>

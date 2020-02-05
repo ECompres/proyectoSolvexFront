@@ -1,0 +1,29 @@
+<h2>Cantidad de empleados: {{empleados.length}}</h2>
+<h2>Total de pago a empleados: {{ suma }}</h2>
+<table class="table" id="tablita">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Cedula</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Departamento</th>
+            <th scope="col">Puesto</th>
+            <th scope="col">Acciones</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of empleados">
+            <td>{{x.nombre}}</td>
+            <td>{{x.apellido}}</td>
+            <td>{{x.cedula}}</td>
+            <td>Calle {{x.direccion.calle}} # {{x.direccion.numero}}</td>
+            <td>{{x.departamento}}</td>
+            <td>{{x.puesto}}</td>
+            <td>
+                <button class="btn btn-success" [routerLink]="['/detallesEmpleado',x.id]">Ver detalles</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

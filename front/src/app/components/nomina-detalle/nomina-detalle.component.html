@@ -1,0 +1,25 @@
+<button type="button" name="" id="" class="btn btn-secondary" [routerLink]="['/nomina']">
+    <i class="material-icons">undo</i>
+</button>
+
+    <h2 style="text-align:center;">Nomina {{nomina.mes}} {{nomina.anio}}</h2>
+
+<table class="table" id="tablita">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Departamento</th>
+            <th scope="col">Puesto</th>
+            <th scope="col">Sueldo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of nomina.empleados">
+            <td>{{x.nombre}} {{x.apellido}}</td>
+            <td>{{x.departamento}}</td>
+            <td>{{x.puesto}}</td>
+            <td>{{x.sueldo}}</td>
+
+        </tr>
+    </tbody>
+</table>
